@@ -1,0 +1,141 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --background: 0 0% 0%;
+    --foreground: 0 0% 100%;
+    --card: 0 0% 10%;
+    --card-foreground: 0 0% 100%;
+    --popover: 0 0% 10%;
+    --popover-foreground: 0 0% 100%;
+    --primary: 51 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 20%;
+    --secondary-foreground: 0 0% 100%;
+    --muted: 0 0% 20%;
+    --muted-foreground: 0 0% 80%;
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 0 0% 27%;
+    --input: 0 0% 20%;
+    --ring: 51 100% 50%;
+    --chart-1: 51 100% 50%;
+    --chart-2: 39 100% 50%;
+    --chart-3: 33 100% 50%;
+    --chart-4: 16 100% 62%;
+    --chart-5: 9 100% 64%;
+    --radius: 0.5rem;
+    --vh: 1vh;
+  }
+
+  * {
+    @apply border-border;
+  }
+  
+  body {
+    @apply bg-background text-foreground font-medium;
+    font-size: 16px;
+    line-height: 1.5;
+    overscroll-behavior: none;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  /* PWA & Mobile optimizations */
+  html {
+    height: 100%;
+    height: calc(var(--vh, 1vh) * 100);
+    overflow-x: hidden;
+  }
+
+  #root {
+    height: 100%;
+    min-height: 100vh;
+    min-height: calc(var(--vh, 1vh) * 100);
+  }
+
+  /* Prevent zoom on iOS Safari */
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="search"],
+  textarea,
+  select {
+    font-size: 16px !important;
+  }
+
+  /* Better touch targets for mobile */
+  button,
+  input,
+  select,
+  textarea {
+    min-height: 44px;
+    touch-action: manipulation;
+  }
+
+  /* Safe area insets for notched devices */
+  .pb-safe {
+    padding-bottom: max(1rem, env(safe-area-inset-bottom));
+  }
+
+  .pt-safe {
+    padding-top: max(1rem, env(safe-area-inset-top));
+  }
+
+  /* Mejores contrastes para personas mayores de 40 */
+  .text-muted-foreground {
+    @apply text-gray-300;
+  }
+
+  /* Botones más grandes y legibles */
+  button {
+    @apply font-medium;
+  }
+
+  /* Enlaces más visibles */
+  a {
+    @apply text-primary font-medium;
+  }
+
+  /* Cards con mejor contraste */
+  .card {
+    @apply border-2 border-gray-700;
+  }
+
+  /* Scroll behavior for mobile */
+  .scroll-smooth {
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Hide scrollbars but keep functionality */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
+
+  /* Improve focus styles for accessibility */
+  :focus-visible {
+    outline: 2px solid hsl(var(--ring));
+    outline-offset: 2px;
+  }
+
+  /* PWA splash screen background */
+  @media (display-mode: standalone) {
+    body {
+      user-select: none;
+      -webkit-touch-callout: none;
+      -webkit-user-select: none;
+    }
+  }
+}
