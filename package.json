@@ -4,9 +4,9 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "dev": "ts-node server/index.ts"
-    "build": "vite build && tsc --project tsconfig.server.json",
-    "start": "tsx watch scripts/dev.ts"
+  "dev": "ts-node server/index.ts",
+  "build": "vite build && tsc --project tsconfig.server.json",
+  "start": "tsx watch scripts/dev.ts"
   },
   "dependencies": {
     "@radix-ui/react-checkbox": "1.1.3",
