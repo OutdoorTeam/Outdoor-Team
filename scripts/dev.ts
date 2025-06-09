@@ -5,7 +5,7 @@ let viteServer;
 
 async function startDev() {
   // Start the Express API server first
-  await startServer(3001);
+  await startServer(Number(process.env.PORT) || 3000);
 
   // Then start Vite in dev mode
   const viteServer = await createServer({
